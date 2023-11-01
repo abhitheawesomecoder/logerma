@@ -9,31 +9,28 @@ Widget searchForm(BuildContext context) {
   List<String> room = <String>['Room', 'Two', 'Three', 'Four'];
   List<String> adult = <String>['Adults', 'Two', 'Three', 'Four'];
   List<String> child = <String>['Child', 'Two', 'Three', 'Four'];
-  return Container(
-    padding: const EdgeInsets.all(20),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text("Choose Date to View Prices",
-            style: TextStyle(
-                fontFamily: 'NordnetSans',
-                fontSize: 16,
-                fontWeight: FontWeight.w700)),
-        textInput(Icons.search, "Search..."),
-        Row(children: [
-          SizedBox(
-              width: screenWidth / 2 - 25,
-              child: textInput(Icons.calendar_month, "Check-In & Out")),
-          Container(
-              margin: const EdgeInsets.only(left: 10),
-              width: screenWidth / 2 - 25,
-              child: textInput(Icons.calendar_month, "Check-In & Out"))
-        ]),
-        dropdownControl(DropdownMenuControl(list: room),
-            DropdownMenuControl(list: adult), DropdownMenuControl(list: child)),
-        searchButton(context)
-      ],
-    ),
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      const Text("Choose Date to View Prices",
+          style: TextStyle(
+              fontFamily: 'NordnetSans',
+              fontSize: 16,
+              fontWeight: FontWeight.w700)),
+      textInput(Icons.search, "Search..."),
+      Row(children: [
+        SizedBox(
+            width: screenWidth / 2 - 25,
+            child: textInput(Icons.calendar_month, "Check-In & Out")),
+        Container(
+            margin: const EdgeInsets.only(left: 10),
+            width: screenWidth / 2 - 25,
+            child: textInput(Icons.calendar_month, "Check-In & Out"))
+      ]),
+      dropdownControl(DropdownMenuControl(list: room),
+          DropdownMenuControl(list: adult), DropdownMenuControl(list: child)),
+      searchButton(context)
+    ],
   );
 }

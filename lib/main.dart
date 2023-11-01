@@ -1,4 +1,7 @@
 import 'package:assignment/components/header.dart';
+import 'package:assignment/components/recent.dart';
+import 'package:assignment/components/recent_card.dart';
+import 'package:assignment/components/recommended_card.dart';
 import 'package:assignment/components/search_form.dart';
 import 'package:flutter/material.dart';
 
@@ -34,12 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: header(widget.title),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [searchForm(context)],
-        ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        appBar: header(widget.title),
+        body: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: [searchForm(context), recent(), recommendedCard()],
+            ),
+          ), // This trailing comma makes auto-formatting nicer for build methods.
+        ));
   }
 }
