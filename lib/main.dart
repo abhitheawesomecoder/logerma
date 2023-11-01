@@ -4,6 +4,8 @@ import 'package:assignment/components/header.dart';
 import 'package:assignment/components/recent.dart';
 import 'package:assignment/components/recommended_property.dart';
 import 'package:assignment/components/search_form.dart';
+import 'package:assignment/components/testimonials.dart';
+import 'package:assignment/components/trending_destinations.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -48,7 +50,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 recent(),
                 recommendedProperty(),
                 aroundYou(),
-                accomodationPromotion()
+                accomodationPromotion(),
+                const Gallery(),
+                testimonials()
               ],
             ),
           ),
