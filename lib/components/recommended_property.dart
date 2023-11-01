@@ -1,27 +1,28 @@
-import 'package:assignment/components/recent_card.dart';
+import 'package:assignment/components/recommended_card.dart';
 import 'package:flutter/material.dart';
 
-Widget recent() {
+Widget recommendedProperty() {
   return Padding(
       padding: const EdgeInsets.only(top: 20),
       child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("Recent",
+            const Text("Recommended Property",
                 style: TextStyle(
                     fontFamily: 'NordnetSans',
                     fontSize: 16,
                     fontWeight: FontWeight.w700)),
-            SizedBox(
-                height: 120,
+            Container(
+                margin: const EdgeInsets.only(top: 10),
+                height: 300,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    recentCard(),
-                    recentCard(),
-                    recentCard(),
-                    recentCard()
+                    recommendedCard(),
+                    recommendedCard(),
+                    recommendedCard(),
+                    recommendedCard()
                   ],
                 ))
           ]));
