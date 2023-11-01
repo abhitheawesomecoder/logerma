@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 
 Widget searchForm(BuildContext context) {
   final screenWidth = MediaQuery.of(context).size.width;
-
+  List<String> room = <String>['Room', 'Two', 'Three', 'Four'];
+  List<String> adult = <String>['Adults', 'Two', 'Three', 'Four'];
+  List<String> child = <String>['Child', 'Two', 'Three', 'Four'];
   return Container(
     padding: const EdgeInsets.all(20),
     child: Column(
@@ -28,8 +30,8 @@ Widget searchForm(BuildContext context) {
               width: screenWidth / 2 - 25,
               child: textInput(Icons.calendar_month, "Check-In & Out"))
         ]),
-        dropdownControl(const DropdownMenuControl(),
-            const DropdownMenuControl(), const DropdownMenuControl()),
+        dropdownControl(DropdownMenuControl(list: room),
+            DropdownMenuControl(list: adult), DropdownMenuControl(list: child)),
         searchButton(context)
       ],
     ),
