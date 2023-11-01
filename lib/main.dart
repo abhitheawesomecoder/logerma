@@ -1,7 +1,7 @@
+import 'package:assignment/components/accomodation_promotion.dart';
+import 'package:assignment/components/around_you.dart';
 import 'package:assignment/components/header.dart';
 import 'package:assignment/components/recent.dart';
-import 'package:assignment/components/recent_card.dart';
-import 'package:assignment/components/recommended_card.dart';
 import 'package:assignment/components/recommended_property.dart';
 import 'package:assignment/components/search_form.dart';
 import 'package:flutter/material.dart';
@@ -43,9 +43,15 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Container(
             padding: const EdgeInsets.all(20),
             child: Column(
-              children: [searchForm(context), recent(), recommendedProperty()],
+              children: [
+                searchForm(context),
+                recent(),
+                recommendedProperty(),
+                aroundYou(),
+                accomodationPromotion()
+              ],
             ),
-          ), // This trailing comma makes auto-formatting nicer for build methods.
+          ),
         ));
   }
 }
