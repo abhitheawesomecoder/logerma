@@ -37,25 +37,70 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  Widget menuList(context, selectedIndex) {
+    List<Widget> widgetOptions = <Widget>[
+      SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              searchForm(context),
+              recent(),
+              recommendedProperty(),
+              aroundYou(),
+              accomodationPromotion(),
+              trendingDestinations(),
+              testimonials()
+            ],
+          ),
+        ),
+      ),
+      const Icon(Icons.heart_broken),
+      const Icon(Icons.calendar_month),
+      const Icon(Icons.person),
+    ];
+    return widgetOptions.elementAt(selectedIndex);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: header(widget.title),
-        body: SingleChildScrollView(
-          child: Container(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: [
-                searchForm(context),
-                recent(),
-                recommendedProperty(),
-                aroundYou(),
-                accomodationPromotion(),
-                trendingDestinations(),
-                testimonials()
-              ],
-            ),
+      appBar: header(widget.title),
+      body: Center(child: menuList(context, _selectedIndex)),
+      bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: Colors.grey,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: '',
           ),
-        ));
+          BottomNavigationBarItem(
+            icon: Icon(Icons.heart_broken),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_month),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: '',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: const Color(0xFF0868F8),
+        onTap: _onItemTapped,
+      ),
+    );
   }
 }
