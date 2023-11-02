@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 recommendedProperty(),
                 aroundYou(),
                 accomodationPromotion(),
-                const Gallery(),
+                trendingDestinations(),
                 testimonials()
               ],
             ),

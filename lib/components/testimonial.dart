@@ -6,7 +6,7 @@ Widget testimonial() {
           borderRadius: BorderRadius.circular(20),
           color: const Color(0xFF1A232F)),
       padding: const EdgeInsets.all(20),
-      margin: EdgeInsets.only(right: 10),
+      margin: const EdgeInsets.only(right: 10),
       width: 320,
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
         ClipRRect(
